@@ -1,0 +1,22 @@
+digraph "and_gate" {
+label="and_gate";
+rankdir="LR";
+remincross=true;
+n1 [ shape=octagon, label="a", color="black", fontcolor="black"];
+n2 [ shape=octagon, label="b", color="black", fontcolor="black"];
+n3 [ shape=octagon, label="x", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="y", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="z", color="black", fontcolor="black"];
+c9 [ shape=record, label="{{<p6> A|<p7> B}|$85\n$_AND_|{<p8> Y}}",  ];
+c10 [ shape=record, label="{{<p6> A|<p7> B}|$86\n$_OR_|{<p8> Y}}",  ];
+c11 [ shape=record, label="{{<p6> A|<p7> B}|$87\n$_XNOR_|{<p8> Y}}",  ];
+n1:e -> c10:p7:w [color="black", fontcolor="black", label=""];
+n1:e -> c11:p7:w [color="black", fontcolor="black", label=""];
+n1:e -> c9:p7:w [color="black", fontcolor="black", label=""];
+n2:e -> c10:p6:w [color="black", fontcolor="black", label=""];
+n2:e -> c11:p6:w [color="black", fontcolor="black", label=""];
+n2:e -> c9:p6:w [color="black", fontcolor="black", label=""];
+c10:p8:e -> n3:w [color="black", fontcolor="black", label=""];
+c9:p8:e -> n4:w [color="black", fontcolor="black", label=""];
+c11:p8:e -> n5:w [color="black", fontcolor="black", label=""];
+}
