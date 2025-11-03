@@ -1,5 +1,5 @@
 // File: FULL-ADDER using 
-module and_gate (
+module fulladder (
     input a,
     input b,
     output x, 
