@@ -1,0 +1,100 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x152e07100 .scope module, "time_coder" "time_coder" 2 2;
+ .timescale -9 -12;
+v0x152e17a00_0 .var "a1", 0 0;
+v0x152e17ab0_0 .var "a2", 0 0;
+v0x152e17b40_0 .var "a3", 0 0;
+v0x152e17bf0_0 .var "a4", 0 0;
+v0x152e17ca0_0 .net "x", 0 0, L_0x152e17e20;  1 drivers
+v0x152e17d70_0 .net "y", 0 0, L_0x152e180d0;  1 drivers
+S_0x152e07270 .scope module, "uut" "priority_coder" 2 6, 3 2 0, S_0x152e07100;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a1";
+    .port_info 1 /INPUT 1 "a2";
+    .port_info 2 /INPUT 1 "a3";
+    .port_info 3 /INPUT 1 "a4";
+    .port_info 4 /OUTPUT 1 "x";
+    .port_info 5 /OUTPUT 1 "y";
+L_0x152e17e20 .functor OR 1, v0x152e17bf0_0, v0x152e17b40_0, C4<0>, C4<0>;
+L_0x152e17f70 .functor NOT 1, v0x152e17b40_0, C4<0>, C4<0>, C4<0>;
+L_0x152e17fe0 .functor AND 1, L_0x152e17f70, v0x152e17ab0_0, C4<1>, C4<1>;
+L_0x152e180d0 .functor OR 1, L_0x152e17fe0, v0x152e17bf0_0, C4<0>, C4<0>;
+v0x152e07470_0 .net *"_ivl_2", 0 0, L_0x152e17f70;  1 drivers
+v0x152e174d0_0 .net *"_ivl_4", 0 0, L_0x152e17fe0;  1 drivers
+v0x152e17570_0 .net "a1", 0 0, v0x152e17a00_0;  1 drivers
+v0x152e17620_0 .net "a2", 0 0, v0x152e17ab0_0;  1 drivers
+v0x152e176b0_0 .net "a3", 0 0, v0x152e17b40_0;  1 drivers
+v0x152e17790_0 .net "a4", 0 0, v0x152e17bf0_0;  1 drivers
+v0x152e17830_0 .net "x", 0 0, L_0x152e17e20;  alias, 1 drivers
+v0x152e178d0_0 .net "y", 0 0, L_0x152e180d0;  alias, 1 drivers
+    .scope S_0x152e07100;
+T_0 ;
+    %vpi_call 2 9 "$dumpfile", "waveform" {0 0 0};
+    %vpi_call 2 10 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x152e07100 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17a00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17ab0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17b40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17bf0_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x152e17a00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17ab0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17b40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17bf0_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17a00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x152e17ab0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17b40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17bf0_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17a00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17ab0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x152e17b40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17bf0_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17a00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17ab0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x152e17b40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x152e17bf0_0, 0, 1;
+    %delay 5000, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x152e07100;
+T_1 ;
+    %vpi_call 2 21 "$monitor", "time=%0t | a1=%b a2=%b a3=%b a4=%b x=%b y=%b", $time, v0x152e17a00_0, v0x152e17ab0_0, v0x152e17b40_0, v0x152e17bf0_0, v0x152e17ca0_0, v0x152e17d70_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "time_coder.v";
+    "priority_coder.v";
